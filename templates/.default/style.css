@@ -1,0 +1,61 @@
+.project_table {
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+
+.project_table thead {
+    background: #eef2f4;
+    font-size: 10pt;
+}
+
+.project_table tr th {
+    padding: 5px;
+    text-align: center;
+}
+
+.project_table tr td {
+    border-bottom: 1px solid #eef2f4;
+    vertical-align: top;
+    padding: 10px 0 0 0;
+}
+
+.project_table ul {
+    margin: 0 0 10px 0;
+}
+
+.project_table ul li {
+    margin: 4px 0 0 0;
+}
+
+.red {
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    padding: 0;
+    background: #f32b63;
+    float: left;
+}
+
+.yellow {
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    background: #f8a70b;
+    float: left;
+}
+
+.green {
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    background: #baed21;
+    float: left;
+}
+
+.grey {
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    background: #aeaeae;
+    float: left;
+}
