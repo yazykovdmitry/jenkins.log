@@ -6,8 +6,10 @@ if (empty($arParams['JENKINS_JSON_URL'])) {
     return false;
 }
 
+$url = $arParams['JENKINS_JSON_URL'] . '?pretty=true&depth=2&tree=jobs[name,url,color,description,lastBuild[number,duration,timestamp,url,changeSet[user,items[author[fullName,absoluteUrl],msg,paths[editType,file]]]]]';
+
 //  Получние данных
-$serverData = file_get_contents($arParams['JENKINS_JSON_URL']);
+$serverData = file_get_contents($url);
 
 if ($serverData === false) {
     ShowMessage('Данные не получены');
