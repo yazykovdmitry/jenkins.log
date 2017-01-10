@@ -42,7 +42,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
                 <table>
                     <tbody>
                     <tr>
-                        <td>Не определено</td>
+                        <td>Изменений нет, либо отмена изменений</td>
                     </tr>
                     </tbody>
                 </table>
