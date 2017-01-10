@@ -27,6 +27,75 @@
     margin: 4px 0 0 0;
 }
 
+.project_table table {
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.project_table table thead tr th {
+    font-weight: bold;
+}
+
+.project_table table tr td {
+    border-bottom: none;
+    padding: 2px;
+}
+
+/*
+    Ширина внутренней таблицы
+*/
+.innerTable thead tr th {
+    padding: 2px;
+    font-weight: bold;
+}
+.innerTable tbody tr td:nth-child(1) {
+    width: 25% !important;
+}
+.innerTable tbody tr td:nth-child(2) {
+    width: 10% !important;
+}
+.innerTable tbody tr td:nth-child(3) {
+    width: 65% !important;
+    word-wrap: break-word;
+}
+.innerTable tbody tr td {
+    border-bottom: 1px dashed #eef2f4;
+    padding: 7px;
+}
+.innerTable tbody tr:last-child td {
+    border-bottom: none;
+}
+.innerTable tbody tr td:last-child {
+    padding: 7px !important;
+}
+/*
+    Ширина общей таблицы
+*/
+.project_table tbody tr td:nth-child(1) {
+    width: 1%;
+}
+.project_table tbody tr td:nth-child(2) {
+    width: 4%;
+}
+.project_table tbody tr td:nth-child(3) {
+    width: 15%;
+}
+.project_table tbody tr td:nth-child(4) {
+    width: 5%;
+}
+.project_table tbody tr td:nth-child(5) {
+    width: 10%;
+}
+.project_table tbody tr td:nth-child(6) {
+    width: 70%;
+}
+.project_table tbody tr td:last-child {
+    padding: 0;
+}
+
+/*
+    Цветные квадратики
+*/
 .red {
     width: 15px;
     height: 15px;
@@ -58,4 +127,20 @@
     margin: 2px;
     background: #aeaeae;
     float: left;
+}
+
+/*
+    Скрытые блоки
+*/
+
+.hidden ul {
+    display: none;
+}
+
+.visible ul {
+    display: block;
+}
+
+.show {
+    cursor: pointer;
 }

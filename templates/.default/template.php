@@ -7,7 +7,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
         <tr>
             <th rowspan="2" colspan="2">Статус</th>
             <th rowspan="2">Название</th>
-            <th rowspan="2">Описание</th>
             <th colspan="3">Последняя сборка</th>
         </tr>
         <tr>
@@ -26,10 +25,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
                 <?=$job['STATUS']?>
             </td>
             <td>
-                <a href="<?=$job['URL']?>" target="_blank"><?=$job['NAME']?></a>
-            </td>
-            <td>
-                <?=$job['DESCRIPTION']?>
+                <a href="<?=$job['URL']?>" target="_blank" title="<?=$job['DESCRIPTION']?>"><?=$job['NAME']?></a>
             </td>
 
             <td>
@@ -38,21 +34,62 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
             <td>
                 <?=$job['LAST_BUILD']['TIME']?>
             </td>
+
             <td>
 
-                <?if ($job['LAST_BUILD']['CHANGES'] == false):?>
-                    Не определено
-                <?else:?>
-                    <ul>
-                        <?foreach ($job['LAST_BUILD']['CHANGES'] as $item):?>
-                            <li>
-                                <?=$item->msg?>
-                            </li>
-                        <?endforeach?>
-                    </ul>
-                <?endif?>
+            <?if ($job['LAST_BUILD']['CHANGES'] == false):?>
+
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>Не определено</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            <?else:?>
+
+                <table class="innerTable">
+                    <thead>
+                        <tr>
+                            <th>Коммит</th>
+                            <th>Автор</th>
+                            <th>Файлы</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    <?foreach ($job['LAST_BUILD']['CHANGES'] as $item):?>
+
+                        <tr>
+                            <td><?=$item->msg?></td>
+                            <td><a href="<?=$item->author->absoluteUrl?>" target="_blank"><?=$item->author->fullName?></a></td>
+                            <td>
+
+                                <div class="hidden">
+                                    <a class="show">Показать все (<?=count($item->paths)?>)</a>
+                                    <ul>
+                                        <?foreach ($item->paths as $path):?>
+                                            <li>
+                                                <b><?=$path->editType?></b>: <?=$path->file?>
+                                            </li>
+                                        <?endforeach?>
+                                    </ul>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                    <?endforeach?>
+
+                    </tbody>
+                </table>
+
+            <?endif?>
 
             </td>
+
+
         </tr>
     <?endforeach?>
     </tbody>
