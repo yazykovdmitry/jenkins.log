@@ -1,8 +1,8 @@
-<?
+<?php
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 if (empty($arParams['JENKINS_JSON_URL'])) {
-    ShowMessage('Укажите путь до json файла');
+    ShowMessage(GetMessage('JENKINS_JSON_URL_ERROR'));
     return false;
 }
 
@@ -12,7 +12,7 @@ $url = $arParams['JENKINS_JSON_URL'] . '?pretty=true&depth=2&tree=jobs[name,url,
 $serverData = file_get_contents($url);
 
 if ($serverData === false) {
-    ShowMessage('Данные не получены');
+    ShowMessage(GetMessage('SERVER_DATA_ERROR'));
     return false;
 }
 
@@ -27,7 +27,7 @@ foreach ($arrayData->jobs as $job) {
         //  Все ок
         case 'blue':
         case '':
-            $status = 'Успешно';
+            $status = GetMessage('SUCCESS');
             $color = 'green';
             break;
 
@@ -39,21 +39,21 @@ foreach ($arrayData->jobs as $job) {
         case 'disabled_anime':
         case 'aborted_anime':
         case 'botbuilt_anime':
-            $status = 'В работе';
+            $status = GetMessage('IN_WORK');
             $color = 'yellow';
             break;
 
         //  Что-то пошло не так
         case 'red':
         case 'yellow':
-            $status = 'Ошибки';
+            $status = GetMessage('ERRORS');
             $color = 'red';
             break;
 
         //  Выключен
         case 'grey':
         case 'disabled':
-            $status = 'Выключен';
+            $status = GetMessage('DISABLED');
             $color = 'grey';
             break;
     }
