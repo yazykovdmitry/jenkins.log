@@ -1,6 +1,6 @@
 # Jenkins.log
 
-Простой компонент состояния активных сборок Jenkins
+Простой Bitrix компонент состояния сборок Jenkins
 
 ## Установка
 
@@ -8,3 +8,6 @@
 
     /local/components/[пространство имен]/
 
+Установка с помощью Composer:
+
+    composer require yazykovdmitry/jenkins.log
