@@ -1,7 +1,7 @@
 {
     "name": "yazykovdmitry/jenkins.log",
     "description": "Bitrix component showing Jenkins log",
-    "version":  "1.0.0",
+    "version":  "1.1.0",
     "keywords": ["bitrix", "components", "jenkins"],
     "homepage": "https://ydmitry.ru/projects/jenkins_log/",
     "type": "bitrix-component",
