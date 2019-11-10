@@ -1,6 +1,8 @@
 # Jenkins.log
 
-Простой Bitrix компонент состояния сборок Jenkins
+Простой Bitrix24 компонент состояния сборок Jenkins.
+
+Официальный сайт решения: https://ydmitry.ru/portfolio/jenkins_log/
 
 ## Установка
 
