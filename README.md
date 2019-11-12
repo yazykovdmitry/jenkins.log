@@ -2,7 +2,7 @@
 
 Простой Bitrix24 компонент состояния сборок Jenkins.
 
-Официальный сайт решения: https://ydmitry.ru/portfolio/jenkins_log/
+https://ydmitry.ru/portfolio/jenkins_log/
 
 ## Установка
 
@@ -13,3 +13,7 @@
 Установка с помощью Composer:
 
     composer require yazykovdmitry/jenkins.log
+
+# О разработчике
+
+[Разработка компонентов 1С-Битрикс](https://ydmitry.ru/services/)
